@@ -1,0 +1,15 @@
+{
+  "name": "@mauruco/cielo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Mauro Brizida",
+  "license": "ISC",
+  "keywords": ["cielo"],
+  "homepage": "https://github.com/mauruco/cielo.git#readme",
+  "bugs": {},
+  "dependencies": {
+    "tiny-json-http": "^7.0.2"
+  }
+}

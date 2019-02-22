@@ -1,0 +1,4 @@
+node_modules/*
+*.http
+config.json
+app.js
