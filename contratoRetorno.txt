@@ -1,0 +1,49 @@
+{
+  "MerchantOrderId": "Texto	50	Sim	Numero de identificação do Pedido.",
+  "Customer": {
+    "Name": "Texto	255	Não	Nome do Comprador."
+  },
+  "Payment": {
+    "ServiceTaxAmount": "INTEGER, VEJA https://developercielo.github.io/manual/cielo-ecommerce#service-tax-amount-taxa-de-embarque",
+    "Installments": "INTEGER, PARCELAS",
+    "Interest": "INTEGER, Tipo de parcelamento - Loja (ByMerchant) ou Cartão (ByIssuer).",
+    "Capture": "Booleano que identifica que a autorização deve ser com captura automática.",
+    "Authenticate": "Booleano,	Define se o comprador será direcionado ao Banco emissor para autenticação do cartão",
+    "Recurrent": "Booleano, marcação de uma transação de recorrencia não programada.",
+    "CreditCard": {
+      "CardNumber": "000000******0004",
+      "ExpirationDate": "12/2021",
+      "SaveCard": "Booleano, que identifica se o cartão será salvo para gerar o CardToken.",
+      "Brand": "Visa"
+    },
+    "Tid": "Id da transação na adquirente.",
+    "ProofOfSale": "Número da autorização, identico ao NSU.",
+    "AuthorizationCode": "Código de autorização.",
+    "SoftDescriptor": "Texto impresso na fatura bancaria comprador - Exclusivo para VISA/MASTER - não permite caracteres especiais",
+    "Provider": "Define comportamento do meio de pagamento / NÃO OBRIGATÓRIO PARA CRÉDITO.",
+    "Amount": "Valor do Pedido (ser enviado em centavos).",
+    "ReceivedDate": "2019-02-25 09:44:41",
+    "CapturedAmount": "Valor capturado em centavos.",
+    "CapturedDate": "Data  e hora da captura, 2019-02-25 09:44:41",
+    "Status": "(CIELO) Status da transação",
+    "IsSplitted": "Nenhuma informçaõ na doc",
+    "ReturnMessage": "(BANCO) Mensagem de retorno da Adquirência.",
+    "ReturnCode": "(BANCO) Código de retorno da Adquirência.",
+    "PaymentId": "Campo Identificador do Pedido.",
+    "Type": "CreditCard",
+    "Currency": "Moeda na qual o pagamento será feito (BRL).",
+    "Country": "Pais na qual o pagamento será feito. (BRA)",
+    "Links": [
+      {
+        "Method": "GET",
+        "Rel": "self",
+        "Href": "https://apiquerysandbox.cieloecommerce.cielo.com.br/1/sales/1649df0e-9d97-4bd4-8017-8eb112bae07f"
+      },
+      {
+        "Method": "PUT",
+        "Rel": "void",
+        "Href": "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/1649df0e-9d97-4bd4-8017-8eb112bae07f/void"
+      }
+    ]
+  }
+}

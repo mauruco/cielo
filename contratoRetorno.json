@@ -1,0 +1,65 @@
+HTTP/1.1 201 Created
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Type: application/json; charset=utf-8
+Expires: -1
+Location: https://apiquerysandbox.cieloecommerce.cielo.com.br/1/sales/1649df0e-9d97-4bd4-8017-8eb112bae07f
+Server: Microsoft-IIS/10.0
+X-Response-Time: 152ms
+X-AspNet-Version: 4.0.30319
+Request-Context: appId=cid-v1:3d714a4c-afcb-409b-a4ed-99d762fe82bf
+Access-Control-Expose-Headers: Request-Context
+X-Powered-By: ASP.NET, ARR/3.0
+Date: Mon, 25 Feb 2019 12:44:41 GMT
+Connection: close
+Content-Length: 1008
+
+{
+  "MerchantOrderId": "2014111703333",
+  "Customer": {
+    "Name": "[Guest]"
+  },
+  "Payment": {
+    "ServiceTaxAmount": 0,
+    "Installments": 1,
+    "Interest": 0,
+    "Capture": true,
+    "Authenticate": false,
+    "Recurrent": false,
+    "CreditCard": {
+      "CardNumber": "000000******0004",
+      "ExpirationDate": "12/2021",
+      "SaveCard": false,
+      "Brand": "Visa"
+    },
+    "Tid": "0225094441850",
+    "ProofOfSale": "20190225094441850",
+    "AuthorizationCode": "787759",
+    "SoftDescriptor": "123456789ABCD",
+    "Provider": "Simulado",
+    "Amount": 300,
+    "ReceivedDate": "2019-02-25 09:44:41",
+    "CapturedAmount": 300,
+    "CapturedDate": "2019-02-25 09:44:41",
+    "Status": 2,
+    "IsSplitted": false,
+    "ReturnMessage": "Operation Successful",
+    "ReturnCode": "6",
+    "PaymentId": "1649df0e-9d97-4bd4-8017-8eb112bae07f",
+    "Type": "CreditCard",
+    "Currency": "BRL",
+    "Country": "BRA",
+    "Links": [
+      {
+        "Method": "GET",
+        "Rel": "self",
+        "Href": "https://apiquerysandbox.cieloecommerce.cielo.com.br/1/sales/1649df0e-9d97-4bd4-8017-8eb112bae07f"
+      },
+      {
+        "Method": "PUT",
+        "Rel": "void",
+        "Href": "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/1649df0e-9d97-4bd4-8017-8eb112bae07f/void"
+      }
+    ]
+  }
+}

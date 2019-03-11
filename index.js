@@ -1,7 +1,7 @@
 const tiny = require('tiny-json-http');
 
 class Cielo {
-  
+
   constructor(config) {
 
     this.MerchantId = config.MerchantId;
@@ -9,7 +9,7 @@ class Cielo {
     this.apiUrl = config.apiUrl;
     this.apiQueryUrl = config.apiQueryUrl;
     this.headers = {
-      "Content-Type" : 'application/json',
+      "Content-Type": 'application/json',
       "MerchantId": this.MerchantId,
       "MerchantKey": this.MerchantKey
     };
@@ -30,10 +30,10 @@ class Cielo {
           }
         }
       };
-      
+
       let check = this.validateObj(expected, data);
-      if(!check)
-        return resolve({httpStatusCode: 401, body: { Code: 'interno', Message: 'Cielo @creditCardAuthMin: JSON.body não corresponde ao padrão esperado' }});
+      if (!check)
+        return resolve({ httpStatusCode: 401, body: { Code: 'interno', Message: 'Cielo @creditCardAuthMin: JSON.body não corresponde ao padrão esperado' } });
 
       let cleanData = this.cleanData(data);
 
@@ -44,7 +44,7 @@ class Cielo {
       }, (error, res) => {
 
         let { httpStatusCode, body } = this.validateResponse(error, res, 2);
-        let response = {httpStatusCode: httpStatusCode, body: body};
+        let response = { httpStatusCode: httpStatusCode, body: body };
         resolve(response);
       });
     });
@@ -59,7 +59,7 @@ class Cielo {
       let check = this.validateObj(expected, data);
       if (!check)
         return resolve({ httpStatusCode: 401, body: { Code: 'interno', Message: 'Cielo @creditCardAuthMin: JSON.body não corresponde ao padrão esperado' } });
-      
+
       if (!data.PaymentId)
         return resolve({ httpStatusCode: 401, body: { Code: 'interno', Message: 'Cielo @creditCardAuthMin: PaymentId não corresponde ao padrão esperado' } });
 
@@ -83,7 +83,7 @@ class Cielo {
     let body = error ? (error.body ? (error.body.length > 0 ? error.body[0] : error.body) : error) : null;
     body = response ? (response.body ? response.body : response) : body;
 
-    if(error || body && body.Payment && body.Payment.Status && body.Payment.Status !== successStatus)
+    if (error || body && body.Payment && body.Payment.Status && body.Payment.Status !== successStatus)
       httpStatusCode = 401;
 
     return { httpStatusCode, body };
@@ -111,16 +111,22 @@ class Cielo {
 
   validateObj(expected, received) {
 
-    for(let k in expected) {
+    for (let k in expected) {
 
-      if(typeof received[k] === 'undefined')
+      if (typeof received[k] === 'undefined')
         return false;
-      if(typeof expected[k] === 'object')
+      if (typeof expected[k] === 'object')
         return this.validateObj(expected[k], received[k]);
     }
 
     return true;
   }
 }
+
+(()=> {
+
+  console.log('dev');
+  console.log(process.env.NODE_ENV);
+})();
 
 module.exports = Cielo;

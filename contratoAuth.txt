@@ -1,0 +1,12 @@
+POST
+{
+   "MerchantOrderId":"Texto	50	Sim	Numero de identificação do Pedido.",
+   "Payment":{
+     "Amount":"Valor do Pedido (ser enviado em centavos).",
+     "CreditCard":{
+        "CardNumber":"0000000000000001",
+        "ExpirationDate":"12/2021",
+        "Brand":"Visa"
+     }
+   }
+}
